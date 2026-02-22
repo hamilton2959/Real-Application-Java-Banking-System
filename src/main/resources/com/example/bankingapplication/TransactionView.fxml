@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" style="-fx-padding: 20;" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.bankingapplication.controllers.TransactionController">
+
+    <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Transaction Management" />
+    <Separator />
+
+    <!-- Transaction Form -->
+    <GridPane hgap="10" prefHeight="202.0" prefWidth="916.0" vgap="10">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+
+        <Label text="Account Number:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="accountNumberField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button onAction="#handleCheckBalance" text="Check Balance" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+        <Label text="Transaction Type:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="transactionTypeCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Amount:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="amountField" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="To Account (Transfer):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="toAccountField" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextArea fx:id="descriptionArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <!-- Balance Display -->
+    <Label fx:id="balanceLabel" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+
+    <!-- Buttons -->
+    <HBox alignment="CENTER" spacing="10">
+        <Button onAction="#handleTransaction" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px;" text="Process Transaction" />
+        <Button onAction="#loadTransactions" style="-fx-background-color: #9b59b6; -fx-text-fill: white;" text="Load History" />
+    </HBox>
+
+    <Label fx:id="messageLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+    <Separator />
+
+    <!-- Transaction History -->
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Transaction History" />
+    <TableView fx:id="transactionTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTransactionType" prefWidth="100" text="Type" />
+            <TableColumn fx:id="colAmount" prefWidth="120" text="Amount" />
+            <TableColumn fx:id="colDate" prefWidth="180" text="Date" />
+            <TableColumn fx:id="colDescription" prefWidth="250" text="Description" />
+            <TableColumn fx:id="colReference" prefWidth="150" text="Reference" />
+            <TableColumn fx:id="colBalanceAfter" prefWidth="120" text="Balance After" />
+        </columns>
+    </TableView>
+</VBox>

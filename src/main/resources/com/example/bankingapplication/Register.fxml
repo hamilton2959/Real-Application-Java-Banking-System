@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450" prefWidth="600"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.bankingapplication.controllers.RegisterController"
+            stylesheets="@style.css">
+
+<VBox alignment="CENTER" spacing="15"
+      layoutX="170" layoutY="80">
+
+    <Label text="Create Account"
+           styleClass="label-title"/>
+
+    <TextField fx:id="usernameField"
+               promptText="Username"
+               prefWidth="250"/>
+
+    <PasswordField fx:id="passwordField"
+                   promptText="Password"
+                   prefWidth="250"/>
+
+    <ComboBox fx:id="roleBox"
+              promptText="Select Role"
+              prefWidth="250"/>
+
+    <Button text="Register"
+            prefWidth="250"
+            onAction="#handleRegister"/>
+
+    <Hyperlink text="Already have an account? Login"
+               onAction="#goToLogin"/>
+
+    <Label fx:id="messageLabel"/>
+
+</VBox>
+
+</AnchorPane>

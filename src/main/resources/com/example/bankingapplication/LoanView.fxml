@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.bankingapplication.controllers.LoanConroller" spacing="10" style="-fx-padding: 20;">
+
+    <Label text="Loan Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Separator/>
+
+    <!-- Loan Application Form -->
+    <GridPane hgap="10" vgap="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <Label text="Account Number:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="accountNumberField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Loan Type:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="loanTypeCombo" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="PERSONAL"/>
+                    <String fx:value="HOME"/>
+                    <String fx:value="CAR"/>
+                    <String fx:value="EDUCATION"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Label text="Loan Amount:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="loanAmountField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Interest Rate (%):" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="interestRateField" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+        <Label text="Tenure (Months):" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="tenureField" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+        <Label text="Monthly EMI:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <Label fx:id="emiLabel" GridPane.columnIndex="3" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Apply for Loan" onAction="#handleApplyLoan" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        <Button text="Calculate EMI" onAction="#handleCalculateEMI" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+        <Button text="Approve Loan" onAction="#handleApproveLoan" style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+        <Button text="Pay EMI" onAction="#handlePayEMI" style="-fx-background-color: #9b59b6; -fx-text-fill: white;"/>
+    </HBox>
+
+    <Label fx:id="messageLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+    <Separator/>
+
+    <!-- Loan Table -->
+    <Label text="Loan List" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <TableView fx:id="loanTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colAccountNumber" text="Account" prefWidth="120"/>
+            <TableColumn fx:id="colLoanType" text="Type" prefWidth="100"/>
+            <TableColumn fx:id="colLoanAmount" text="Amount" prefWidth="120"/>
+            <TableColumn fx:id="colInterestRate" text="Rate" prefWidth="80"/>
+            <TableColumn fx:id="colTenure" text="Tenure" prefWidth="80"/>
+            <TableColumn fx:id="colEMI" text="Monthly EMI" prefWidth="120"/>
+            <TableColumn fx:id="colOutstanding" text="Outstanding" prefWidth="120"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

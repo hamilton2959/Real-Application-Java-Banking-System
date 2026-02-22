@@ -1,0 +1,464 @@
+/* ========================================
+   Banking System - Professional Styles
+   ======================================== */
+
+/* Root Variables */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 13px;
+
+    /* Color Palette */
+    -primary-color: #2c3e50;
+    -secondary-color: #34495e;
+    -success-color: #27ae60;
+    -warning-color: #f39c12;
+    -danger-color: #e74c3c;
+    -info-color: #3498db;
+
+    -background-light: #ecf0f1;
+    -background-white: #ffffff;
+    -text-dark: #2c3e50;
+    -text-light: #7f8c8d;
+    -border-color: #bdc3c7;
+
+    /* Shadows */
+    -shadow-light: rgba(0, 0, 0, 0.1);
+    -shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   Header Section
+   ======================================== */
+.header {
+    -fx-background-color: -primary-color;
+    -fx-padding: 0;
+}
+
+.header-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.header-subtitle {
+    -fx-text-fill: #bdc3c7;
+}
+
+/* ========================================
+   Main Layout
+   ======================================== */
+.main-tabpane {
+    -fx-background-color: -background-light;
+}
+
+.main-tabpane .tab {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+.main-tabpane .tab:selected {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.main-tabpane .tab:hover {
+    -fx-background-color: -secondary-color;
+}
+
+.main-tabpane .tab-pane {
+    -fx-background-color: -background-light;
+}
+
+/* ========================================
+   Form Sections
+   ======================================== */
+.form-section {
+    -fx-background-color: -background-white;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.form-section > .title {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10;
+}
+
+.form-section > .content {
+    -fx-background-color: -background-white;
+    -fx-padding: 0;
+}
+
+/* ========================================
+   Form Labels and Fields
+   ======================================== */
+.form-label {
+    -fx-text-fill: -text-dark;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.text-field, .text-area, .combo-box, .date-picker {
+    -fx-background-color: white;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .text-area:focused,
+.combo-box:focused, .date-picker:focused {
+    -fx-border-color: -info-color;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, -info-color, 5, 0.3, 0, 0);
+}
+
+.readonly-field {
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: -text-light;
+    -fx-opacity: 1.0;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+.button {
+    -fx-background-color: -secondary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, -shadow-light, 3, 0.5, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: -primary-color;
+    -fx-effect: dropshadow(gaussian, -shadow-medium, 5, 0.5, 0, 2);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.button:pressed {
+    -fx-background-color: #1a252f;
+    -fx-effect: innershadow(gaussian, -shadow-medium, 5, 0.5, 0, 1);
+}
+
+/* Button Variants */
+.btn-success {
+    -fx-background-color: -success-color;
+}
+
+.btn-success:hover {
+    -fx-background-color: #229954;
+}
+
+.btn-warning {
+    -fx-background-color: -warning-color;
+}
+
+.btn-warning:hover {
+    -fx-background-color: #d68910;
+}
+
+.btn-danger {
+    -fx-background-color: -danger-color;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.btn-primary {
+    -fx-background-color: -info-color;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+.btn-secondary {
+    -fx-background-color: #95a5a6;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* ========================================
+   Table Views
+   ======================================== */
+.table-section {
+    -fx-background-color: -background-white;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.table-section > .title {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: -secondary-color;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent -border-color transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 8;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #d6eaf8;
+    -fx-text-fill: -text-dark;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #ebf5fb;
+    -fx-cursor: hand;
+}
+
+.table-cell {
+    -fx-padding: 8;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* ========================================
+   Statistics Cards
+   ======================================== */
+.stat-card {
+    -fx-background-color: white;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, -shadow-light, 5, 0.3, 0, 2);
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(gaussian, -shadow-medium, 8, 0.4, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.stat-label {
+    -fx-text-fill: -text-light;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-text-fill: -primary-color;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.stat-description {
+    -fx-text-fill: -text-light;
+    -fx-font-size: 11px;
+}
+
+/* ========================================
+   Status Bar
+   ======================================== */
+.status-bar {
+    -fx-background-color: -primary-color;
+    -fx-border-color: #1a252f;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-text {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+.separator {
+    -fx-background-color: -border-color;
+}
+
+.separator:vertical {
+    -fx-min-width: 1;
+    -fx-max-width: 1;
+    -fx-background-color: #34495e;
+}
+
+/* ========================================
+   Help and Info Sections
+   ======================================== */
+.help-box {
+    -fx-background-color: #d6eaf8;
+    -fx-border-color: -info-color;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.help-text {
+    -fx-text-fill: -text-dark;
+    -fx-font-size: 12px;
+}
+
+.section-title {
+    -fx-text-fill: -primary-color;
+    -fx-font-weight: bold;
+}
+
+.page-title {
+    -fx-text-fill: -primary-color;
+    -fx-font-weight: bold;
+}
+
+/* ========================================
+   Scrollbar Styling
+   ======================================== */
+.scroll-bar {
+    -fx-background-color: -background-light;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #95a5a6;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.scroll-bar .track {
+    -fx-background-color: -background-light;
+}
+
+/* ========================================
+   ComboBox Styling
+   ======================================== */
+.combo-box .list-cell {
+    -fx-padding: 8;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #ebf5fb;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: -info-color;
+    -fx-text-fill: white;
+}
+
+/* ========================================
+   Date Picker Styling
+   ======================================== */
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: -secondary-color;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+/* ========================================
+   Tooltips
+   ======================================== */
+.tooltip {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 8;
+    -fx-background-radius: 3;
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+@media screen and (max-width: 1024px) {
+    .root {
+        -fx-font-size: 12px;
+    }
+
+    .button {
+        -fx-font-size: 12px;
+        -fx-padding: 8 15 8 15;
+    }
+}
+
+/* ========================================
+   Animations (Transitions)
+   ======================================== */
+.button,
+.stat-card,
+.table-row-cell {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* ========================================
+   Focus Indicators
+   ======================================== */
+.text-field:focused,
+.text-area:focused,
+.combo-box:focused,
+.date-picker:focused,
+.button:focused {
+    -fx-background-color: white;
+    -fx-border-color: -info-color;
+    -fx-border-width: 2;
+}
+
+/* ========================================
+   Disabled State
+   ======================================== */
+.button:disabled {
+    -fx-opacity: 0.5;
+    -fx-cursor: default;
+}
+
+.text-field:disabled,
+.text-area:disabled,
+.combo-box:disabled,
+.date-picker:disabled {
+    -fx-opacity: 0.6;
+    -fx-background-color: #ecf0f1;
+}

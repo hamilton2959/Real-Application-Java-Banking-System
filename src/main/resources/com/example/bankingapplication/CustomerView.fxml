@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.bankingapplication.controllers.CustomerController" spacing="10" style="-fx-padding: 20;">
+
+    <Label text="Customer Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Separator/>
+
+    <!-- Input Form -->
+    <GridPane hgap="10" vgap="10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <Label text="Account Number:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="accountNumberField" GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="ACC-XXXXX"/>
+
+        <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="emailField" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+        <Label text="Phone:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="phoneField" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+        <Label text="Date of Birth:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <DatePicker fx:id="dobPicker" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+        <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextArea fx:id="addressArea" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.columnSpan="3" prefRowCount="3"/>
+    </GridPane>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add Customer" onAction="#handleAddCustomer" style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        <Button text="Update Customer" onAction="#handleUpdateCustomer" style="-fx-background-color: #f39c12; -fx-text-fill: white;"/>
+        <Button text="Delete Customer" onAction="#handleDeleteCustomer" style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+        <Button text="Clear" onAction="#handleClear" style="-fx-background-color: #95a5a6; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Message Label -->
+    <Label fx:id="messageLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+    <Separator/>
+
+    <!-- Customer Table -->
+    <Label text="Customer List" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <TableView fx:id="customerTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colAccountNumber" text="Account Number" prefWidth="120"/>
+            <TableColumn fx:id="colFirstName" text="First Name" prefWidth="150"/>
+            <TableColumn fx:id="colLastName" text="Last Name" prefWidth="150"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

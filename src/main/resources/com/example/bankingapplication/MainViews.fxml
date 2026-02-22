@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="600" minWidth="900" prefHeight="800" prefWidth="1200" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+
+    <top>
+        <VBox style="-fx-background-color: #2c3e50; -fx-padding: 20;">
+            <Label style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold;" text="Banking System Management" />
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane minHeight="500" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+
+            <!-- Customer Management Tab -->
+            <Tab closable="false" text="Customer Management">
+                <fx:include source="CustomerView.fxml" />
+            </Tab>
+
+            <!-- Account Management Tab -->
+            <Tab closable="false" text="Account Management">
+                <fx:include source="AccountView.fxml" />
+            </Tab>
+
+            <!-- Transactions Tab -->
+            <Tab closable="false" text="Transactions">
+                <fx:include source="TransactionView.fxml" />
+            </Tab>
+
+            <!-- Loans Tab -->
+            <Tab closable="false" text="Loans">
+                <fx:include source="LoanView.fxml" />
+            </Tab>
+
+            <!-- Reports Tab -->
+            <Tab closable="false" text="Reports">
+                <fx:include source="ReportView.fxml" />
+            </Tab>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" minHeight="40" style="-fx-background-color: #34495e; -fx-padding: 10;">
+            <Label prefHeight="17.0" prefWidth="332.0" style="-fx-text-fill: white; -fx-font-size: 12px;" text="© 2026 Banking System | Sky Tech Bank | hamilton.co.ke" />
+         <Label prefHeight="17.0" prefWidth="147.0" style="-fx-text-fill: white;" text="facebook | hamilton ke" />
+         <Label prefHeight="17.0" prefWidth="146.0" style="-fx-text-fill: white;" text="twitter | its_hamilton_10" />
+         <Label prefHeight="17.0" prefWidth="171.0" style="-fx-text-fill: white;" text="Instagram | its_hamilton10" />
+         <Label prefHeight="17.0" prefWidth="153.0" style="-fx-text-fill: white;" text="tik tok | hamilton10" />
+        </HBox>
+    </bottom>
+</BorderPane>

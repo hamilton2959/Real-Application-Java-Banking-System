@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@style.css"
+            fx:controller="com.example.bankingapplication.controllers.LoginController">
+
+    <VBox alignment="CENTER" spacing="15"
+          layoutX="170" layoutY="90">
+
+        <Label text="Secure Login"
+               styleClass="label-title"/>
+
+        <TextField fx:id="usernameField"
+                   promptText="Username"
+                   prefWidth="250"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Password"
+                       prefWidth="250"/>
+
+        <CheckBox fx:id="rememberCheck"
+                  text="Remember Me"/>
+
+        <Button text="Login"
+                prefWidth="250"
+                onAction="#handleLogin"/>
+
+        <Hyperlink text="Don't have an account? Register"
+                   onAction="#goToRegister"/>
+
+        <Label fx:id="messageLabel"/>
+
+    </VBox>
+</AnchorPane>
