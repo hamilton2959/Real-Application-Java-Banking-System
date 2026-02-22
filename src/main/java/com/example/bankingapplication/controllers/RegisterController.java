@@ -29,7 +29,7 @@ public class RegisterController {
     }
 
     @FXML
-    private void handleRegister() {
+    private void handleRegister(ActionEvent event) {
 
         try (Connection conn = DatabaseConfig.getConnection()) {
 
@@ -47,6 +47,12 @@ public class RegisterController {
             ps.executeUpdate();
 
             messageLabel.setText("User Registered Successfully!");
+            //openDashboard();
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("MainViews.fxml"));
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            //Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load()));
+            stage.show();
 
         } catch (Exception e) {
             messageLabel.setText("Registration Failed");

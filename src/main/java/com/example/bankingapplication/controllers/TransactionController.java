@@ -3,6 +3,7 @@ package com.example.bankingapplication.controllers;
 import com.example.bankingapplication.entity.Transaction;
 import com.example.bankingapplication.service.AccountService;
 import com.example.bankingapplication.service.TransactionService;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,15 +12,17 @@ import javafx.scene.control.*;
 
 import java.math.BigDecimal;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class TransactionController implements Initializable {
-    @FXML private TableColumn colTransactionType;
-    @FXML private TableColumn colAmount;
-    @FXML private TableColumn colDate;
-    @FXML private TableColumn colDescription;
-    @FXML private TableColumn colReference;
-    @FXML private TableColumn colBalanceAfter;
+    @FXML private TableColumn<Transaction, String> colTransactionType;
+    @FXML private TableColumn<Transaction, String> colAmount;
+    @FXML private TableColumn<Transaction, String> colDate;
+    @FXML private TableColumn<Transaction, String> colDescription;
+    @FXML private TableColumn<Transaction, String> colReference;
+    @FXML private TableColumn<Transaction, String> colBalanceAfter;
     @FXML private TextField accountNumberField;
     @FXML private TextField amountField;
     @FXML private TextArea descriptionArea;
@@ -47,6 +50,20 @@ public class TransactionController implements Initializable {
                 (obs, old, newVal) -> {
                     toAccountField.setVisible("TRANSFER".equals(newVal));
                 });
+
+        //Setup table columns
+        colTransactionType.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getTransactionType()));
+        colAmount.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getAmount().toString()));
+        colDate.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getTransactionDate().toString()));
+        colDescription.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getDescription()));
+        colReference.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getReferenceNumber()));
+        colBalanceAfter.setCellValueFactory(data ->
+                new SimpleStringProperty(data.getValue().getBalanceAfter().toString()));
     }
 
     public void handleTransaction() {

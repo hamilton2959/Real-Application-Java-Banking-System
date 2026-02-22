@@ -13,6 +13,8 @@ module com.example.bankingapplication {
     requires java.sql;
     requires java.prefs;
     requires jbcrypt;
+    requires kernel;
+    requires layout;
 
     opens com.example.bankingapplication to javafx.fxml;
     exports com.example.bankingapplication;

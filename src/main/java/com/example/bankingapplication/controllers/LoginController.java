@@ -30,7 +30,7 @@ public class LoginController {
         usernameField.setText(SessionManager.getRememberedUser());
     }
 
-    public void handleLogin() {
+    public void handleLogin(ActionEvent event) {
 
         try (Connection conn = DatabaseConfig.getConnection()) {
 
@@ -56,8 +56,8 @@ public class LoginController {
 
                     //openDashboard();
                     FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("MainViews.fxml"));
-
-                    Stage stage = new Stage();
+                    stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                    //Stage stage = new Stage();
                     stage.setScene(new Scene(loader.load()));
                     stage.show();
 
